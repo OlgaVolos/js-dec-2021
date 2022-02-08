@@ -65,7 +65,7 @@
 // }
 
 // - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
-const mixArr = [12, 2, 45, 78, 'my', 'name', 'is', 'Olya', true, false];
+// const mixArr = [12, 2, 45, 78, 'my', 'name', 'is', 'Olya', true, false];
 // for (let i = 0; i < mixArr.length; i++) {
 //     if(typeof mixArr[i] === "boolean"){
 //         console.log(mixArr[i]);
