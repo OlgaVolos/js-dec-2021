@@ -124,5 +124,14 @@
 // const arr2 = [3, 2, 1];
 // console.log(reverse(arr2));
 
+function reverse(arr) {
+    let newArr = [];
+    for (let i = arr.length - 1, ri = 0; i >= 0; i--, ri++) {
+        newArr[ri] = arr[i];
+    }
 
+    return newArr;
+}
+const arr2 = [1,2,3];
+console.log(reverse(arr2));
 
