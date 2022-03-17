@@ -147,26 +147,26 @@
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
-const badWords = ['козел', 'дурак', 'свиня', 'мудак', 'придурок'];
-
-const input = document.createElement("input");
-input.setAttribute('name', 'badWordsInput');
-
-const btn = document.createElement('button');
-btn.innerText = 'check'
-
-document.body.append(input, btn);
-
-btn.onclick  = () => {
-    for (const bad of badWords) {
-        if(input.value.includes(bad)){
-            alert("Но-но-но!");
-            input.value = '';
-            return
-        }
-    }
-    if(input.value){
-        alert('Good!');
-        input.value = ''
-    }
-};
+// const badWords = ['козел', 'дурак', 'свиня', 'мудак', 'придурок'];
+//
+// const input = document.createElement("input");
+// input.setAttribute('name', 'badWordsInput');
+//
+// const btn = document.createElement('button');
+// btn.innerText = 'check'
+//
+// document.body.append(input, btn);
+//
+// btn.onclick  = () => {
+//     for (const bad of badWords) {
+//         if(input.value.includes(bad)){
+//             alert("Но-но-но!");
+//             input.value = '';
+//             return
+//         }
+//     }
+//     if(input.value){
+//         alert('Good!');
+//         input.value = ''
+//     }
+// };
