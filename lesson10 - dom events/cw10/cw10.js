@@ -57,64 +57,89 @@
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
 //
-const div = document.createElement('div');
-const form = document.createElement('form');
-form.setAttribute('name', 'formName');
-
-const input1 = document.createElement('input');
-const input2 = document.createElement('input')
-const input3 = document.createElement('input')
-
-input1.setAttribute('name', 'inputOne')
-input2.setAttribute('name', 'inputTwo')
-input3.setAttribute('name', 'inputThree')
-input1.setAttribute('type', 'number')
-input2.setAttribute('type', 'number')
-input3.setAttribute('type', 'text')
-
-form.append(input1, input2, input3);
-
-const btn = document.createElement('button');
-btn.innerText = 'Print table';
-
-document.body.append(form, btn);
-
-btn.addEventListener('click', function (){
-    let tr = input1.value;
-    let td = input2.value;
-    let txt = input3.value;
-
-    function generate (row, column, text){
-        const divTable = document.createElement('div')
-        const table =document.createElement('table');
-
-        table.style.border = '1px solid red';
-        div.appendChild(table);
-        document.body.appendChild(div);
-
-        for (let i = 0; i < row; i++) {
-            let tr = document.createElement('tr');
-            tr.style.border = '1px solid green';
-            for (let j = 0; j < column; j++) {
-                let td = document.createElement('td');
-                td.style.border = '1px solid blue';
-                td.innerText = `${text}`
-                tr.appendChild(td);
-                table.appendChild(tr)
-
-            }
-
-        }
-
-    }
-    generate(tr, td, txt)
-})
+// const div = document.createElement('div');
+// const form = document.createElement('form');
+// form.setAttribute('name', 'formName');
+//
+// const input1 = document.createElement('input');
+// const input2 = document.createElement('input')
+// const input3 = document.createElement('input')
+//
+// input1.setAttribute('name', 'inputOne')
+// input2.setAttribute('name', 'inputTwo')
+// input3.setAttribute('name', 'inputThree')
+// input1.setAttribute('type', 'number')
+// input2.setAttribute('type', 'number')
+// input3.setAttribute('type', 'text')
+//
+// form.append(input1, input2, input3);
+//
+// const btn = document.createElement('button');
+// btn.innerText = 'Print table';
+//
+// document.body.append(form, btn);
+//
+// btn.addEventListener('click', function (){
+//     let tr = input1.value;
+//     let td = input2.value;
+//     let txt = input3.value;
+//
+//     function generate (row, column, text){
+//         const divTable = document.createElement('div')
+//         const table =document.createElement('table');
+//
+//         table.style.border = '1px solid red';
+//         div.appendChild(table);
+//         document.body.appendChild(div);
+//
+//         for (let i = 0; i < row; i++) {
+//             let tr = document.createElement('tr');
+//             tr.style.border = '1px solid green';
+//             for (let j = 0; j < column; j++) {
+//                 let td = document.createElement('td');
+//                 td.style.border = '1px solid blue';
+//                 td.innerText = `${text}`
+//                 tr.appendChild(td);
+//                 table.appendChild(tr)
+//
+//             }
+//
+//         }
+//
+//     }
+//     generate(tr, td, txt)
+// })
 //
 // - Сворити масив не цензцрних слів.
 //     Сворити інпут текстового типу.
 //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 //     Перевірку робити при натисканні на кнопку
+
+// const badWords = ['козел', 'дурак', 'свиня', 'мудак', 'придурок'];
+//
+// const input = document.createElement("input");
+// input.setAttribute('name', 'badWordsInput');
+//
+// const btn = document.createElement('button');
+// btn.innerText = 'check'
+//
+// document.body.append(input, btn);
+//
+// btn.onclick  = () => {
+//     for (const bad of badWords) {
+//         if(input.value === bad){
+//             alert("Но-но-но!");
+//             input.value = '';
+//             return
+//         }
+//     }
+//     if(input.value){
+//         alert('Good!');
+//         input.value = ''
+//     }
+// };
+
 //
 //
 // - Сворити масив не цензцрних слів.
@@ -122,3 +147,26 @@ btn.addEventListener('click', function (){
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
+const badWords = ['козел', 'дурак', 'свиня', 'мудак', 'придурок'];
+
+const input = document.createElement("input");
+input.setAttribute('name', 'badWordsInput');
+
+const btn = document.createElement('button');
+btn.innerText = 'check'
+
+document.body.append(input, btn);
+
+btn.onclick  = () => {
+    for (const bad of badWords) {
+        if(input.value.includes(bad)){
+            alert("Но-но-но!");
+            input.value = '';
+            return
+        }
+    }
+    if(input.value){
+        alert('Good!');
+        input.value = ''
+    }
+};
