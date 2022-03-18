@@ -70,21 +70,35 @@ const key = 'car' //можна запакувати назву ключа в з�
 //     saveCar(carModel.value, carType.value, carVolume.value)
 // }; //скорочений запис
 
-btn.onclick  = () => {
-    let car = {
-        model: carModel.value,
-        type: carType.value,
-        volume: carVolume.value
-    }
-    let carArray = localStorage.getItem('car');
-    if(!carArray){
-        carArray = [];
-        carArray.push(car);
-        localStorage.setItem('car', JSON.stringify(carArray))
-    } else {
-        let parseCarArray = JSON.parse(carArray);
-        parseCarArray.push(car);
-        localStorage.setItem('car', JSON.stringify(parseCarArray))
+// btn.onsubmit  = () => {
+//     let car = {
+//         model: carModel.value,
+//         type: carType.value,
+//         volume: carVolume.value
+//     }
+//     let carArray = localStorage.getItem('car');
+//     if(!carArray){
+//         carArray = [];
+//         carArray.push(car);
+//         localStorage.setItem('car', JSON.stringify(carArray))
+//     } else {
+//         let parseCarArray = JSON.parse(carArray);
+//         parseCarArray.push(car);
+//         localStorage.setItem('car', JSON.stringify(parseCarArray))
+//
+//     }
+// };
 
-    }
-};
+let carArr = JSON.parse(localStorage.getItem('cars')) || [];
+
+document.forms.carForm.onsubmit = function (e){
+    e.preventDefault();
+    const model = e.target.carModel.value;
+    const type = e.target.carType.value;
+    const volume = e.target.carVolume.value;
+
+    let car = {model, type, volume}
+    carArr.push(car);
+    localStorage.setItem('cars', JSON.stringify(carArr))
+
+}

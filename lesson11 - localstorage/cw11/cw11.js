@@ -57,7 +57,7 @@ users.forEach(user => {
     btn.innerText = 'Add to favorite'
 
 
-    btn.onclick  = () => {
+    btn.onclick  = (e) => {
         const favorite = JSON.parse(localStorage.getItem('user')) || []
         favorite.push(user);
         localStorage.setItem('user', JSON.stringify(favorite));
