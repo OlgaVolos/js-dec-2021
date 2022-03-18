@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.post{
+    width: 200px;
+    margin: 10px;
+    border: 1px solid red;
+}
+
+.comment{
+    width: 400px;
+    height: 400px;
+    margin: 5px;
+    border: 1px solid blue;
+}
